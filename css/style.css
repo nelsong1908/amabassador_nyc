@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+#navi-logo {
+  width: 100%;
+  height: 100%;
+}
+
 .content:after, .gallery:after {
   content: "";
   display: table;
@@ -80,6 +86,7 @@ a {
 }
 
 .gallery {
+  background-color: #eee
   margin: 0 auto;
   text-align: center;
   width: 100%;
@@ -222,32 +229,42 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: 8vh;
   position: relative;
   background: #eee;
   text-align: center;
   padding: 0 2em;
 }
-.et-hero-tabs h1,
-.et-slide h1 {
-  font-size: 2rem;
-  margin: 0;
-  letter-spacing: 1rem;
+
+#h1 {
+  text-align: left;
 }
-.et-hero-tabs h3,
-.et-slide h3 {
-  font-size: 1rem;
-  letter-spacing: 0.3rem;
-  opacity: 0.6;
+.header {
+  display: flex;
+  flex-direction: row;
+  
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff; 
+  z-index: 10;
+  padding: 35px;
+  border-style: solid;
+  border-color: red;
 }
 
 .et-hero-tabs-container {
+  border-style: solid;
+  border-color: red;
   display: flex;
   flex-direction: row;
-  position: absolute;
+ 
+   position: absolute;
+  
   bottom: 0;
   width: 100%;
-  height: 70px;
+  height: 40px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   background: #fff;
   z-index: 10;
@@ -255,6 +272,7 @@ footer {
 .et-hero-tabs-container--top {
   position: fixed;
   top: 0;
+  background: #fff;
 }
 
 .et-hero-tab {
@@ -266,6 +284,7 @@ footer {
   letter-spacing: 0.1rem;
   transition: all 0.5s ease;
   font-size: 0.8rem;
+  background: #fff;
 }
 .et-hero-tab:hover {
   color: white;
@@ -290,9 +309,11 @@ footer {
   .et-hero-tabs h3,
   .et-slide h3 {
     font-size: 1rem;
+    background: #fff;
   }
 
   .et-hero-tab {
     font-size: 1rem;
+    background: #fff;
   }
 }
