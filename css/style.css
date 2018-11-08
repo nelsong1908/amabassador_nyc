@@ -10,19 +10,12 @@
   display: table;
   clear: both;
 }
+
 .background {
-    background: linear-gradient(225deg,  #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
-    background-size: 300% 300%;
-box-sizing: border-box;
-    display: table;
-    height: 100vh;
-    margin: 0;
-    position: relative;
-    width: 100vw;
-    -webkit-animation: Rainbow 25s ease infinite;
-    -moz-animation: Rainbow 25s ease infinite;
-    animation: Rainbow 25s ease infinite;
+  background-color: white
+  
   }
+
 
 body {
   background: #eee;
@@ -35,54 +28,171 @@ body {
   font-weight: 300;
 }
 
-/*
-
-h1, h2 {
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
   
-  color: #999;
-  font-weight: 200;
 }
 
-*/
-
-h1 {
-  font-size: 38px;
-  /*margin-bottom: 2.1739130435%;*/
+.gallery li img {
+  width:  100px;
+  height: 100px;
+  vertical-align: top;
+  transition: all .25s ease-out;
 }
 
-p {
-  color: #666;
+.gallery li .imgmask {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/2000px-Plus_font_awesome.svg.png") 50%/85px no-repeat;
+  position: absolute;
+  width:  100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  vertical-align: bottom;
+  text-align: center;
+  transition: all .25s ease-out;
 }
 
-hr {
-  background: none;
-  margin: 4.347826087% 0;
-  border: none;
-  border-bottom: 1px solid #ddd;
+
+
+.gallery li:hover .imgmask {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/2000px-Plus_font_awesome.svg.png") 50%/85px no-repeat;
+  opacity: 1;
+  transition: all .25s ease-out;
 }
 
-a {
-  text-decoration: none;
-  color: #FF0080;
+.gallery li:hover img {
+  opacity: 0;
+  mask-image: url("https://lh3.googleusercontent.com/dUo1XaxyFQ1kWQmJ-WFLWNOcjzLGpS8dHeeXkd6t5QfDkvbMwsH1gR9YSNNj1q53cfBwmpAjWuCYj4rgVSl0O1xDQR333QRdFcPYYwEtk74uooqQjoQpcMOFP2rrgN8O8S6v2ZV_=w2400")
 }
 
-.container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0 auto;
-}
-.container:after {
-  content: " ";
-  display: block;
-  clear: both;
+/* .gallery li:hover {
+  background: url("https://lh3.googleusercontent.com/dUo1XaxyFQ1kWQmJ-WFLWNOcjzLGpS8dHeeXkd6t5QfDkvbMwsH1gR9YSNNj1q53cfBwmpAjWuCYj4rgVSl0O1xDQR333QRdFcPYYwEtk74uooqQjoQpcMOFP2rrgN8O8S6v2ZV_=w2400")
+} */
+
+
+
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  background: #eee;
+  text-align: center;
+  padding: 0 2em;
 }
 
-.content {
-  padding: 4.347826087%;
+#h1 {
+  text-align: left;
 }
-.content img {
+.header {
+  display: flex;
+  flex-direction: row;
+  
+  bottom: 0;
   width: 100%;
+  height: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff; 
+  z-index: 10;
+  padding: 35px;
+  border-style: solid;
+  border-color: red;
+}
+
+.et-hero-tabs-container {
+  border-style: solid;
+  border-color: red;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  z-index: 10;
+  background-color: 
+}
+.et-hero-tabs-container--top {
+  top: 0;
+  background: #fff;
+  background-color: #fff
+}
+
+.et-hero-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #000;
+  letter-spacing: 0.1rem;
+  transition: all 0.5s ease;
+  font-size: 0.8rem;
+  background: #fff;
+}
+.et-hero-tab:hover {
+  color: white;
+  background: rgba(102, 177, 241, 0.8);
+  transition: all 0.5s ease;
+}
+
+.et-hero-tab-slider {
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background: #66B1F1;
+  transition: left 0.3s ease;
+}
+
+@media (min-width: 800px) {
+  .et-hero-tabs h1,
+  .et-slide h1 {
+    font-size: 3rem;
+  }
+  .et-hero-tabs h3,
+  .et-slide h3 {
+    font-size: 1rem;
+    background: #fff;
+  }
+
+  .et-hero-tab {
+    font-size: 1rem;
+    background: #fff;
+  }
+}
+
+#cf2 {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+#cf2 img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#sweater {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#sweater:hover {
+opacity: 0;
 }
 
 .gallery {
@@ -91,14 +201,13 @@ a {
   text-align: center;
   width: 100%;
 }
-.gallery li {
+
+ .gallery li {
   width: 21.7391304348%;
-  float: left;
-  text-align: center;
-  position: relative;
   margin-bottom: 4.347826087%;
-  display: inline-block;
-}
+}  
+
+
 .gallery li:nth-child(4n + 1) {
   margin-left: 0;
   margin-right: -100%;
@@ -167,7 +276,7 @@ a {
   .gallery li:nth-child(1n + 1) {
     margin-left: 0;
     margin-right: -100%;
-    clear: both;
+     clear: both; 
     margin-left: 0;
   }
 }
@@ -177,143 +286,10 @@ a {
   letter-spacing: 1px;
   margin-top: 2.1739130435%;
   text-transform: uppercase;
-}
+} 
 .gallery li .imgwrap {
   background-color: #fff;
   padding: 8px;
   position: relative;
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
-.gallery li .imgmask {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/2000px-Plus_font_awesome.svg.png") 50%/25px no-repeat;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  z-index: 1;
-  vertical-align: bottom;
-  text-align: center;
-  transition: all .25s ease-out;
-}
-.gallery li img {
-  width: 100%;
-  vertical-align: top;
-  transition: all .25s ease-out;
-}
-@media (max-width: 20rem) {
-  .gallery li img {
-    width: 100%;
-  }
-}
-.gallery li:hover img {
-  opacity: 0;
-  transition: all .25s ease-out;
-}
-.gallery li:hover .imgmask {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plus_font_awesome.svg/2000px-Plus_font_awesome.svg.png") 50%/85px no-repeat;
-  opacity: 1;
-  transition: all .25s ease-out;
-}
-
-footer {
-  font-size: 14.5px;
-  text-transform: uppercase;
-}
-
-.et-hero-tabs,
-.et-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 8vh;
-  position: relative;
-  background: #eee;
-  text-align: center;
-  padding: 0 2em;
-}
-
-#h1 {
-  text-align: left;
-}
-.header {
-  display: flex;
-  flex-direction: row;
-  
-  bottom: 0;
-  width: 100%;
-  height: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background: #fff; 
-  z-index: 10;
-  padding: 35px;
-  border-style: solid;
-  border-color: red;
-}
-
-.et-hero-tabs-container {
-  border-style: solid;
-  border-color: red;
-  display: flex;
-  flex-direction: row;
- 
-   position: absolute;
-  
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  z-index: 10;
-}
-.et-hero-tabs-container--top {
-  position: fixed;
-  top: 0;
-  background: #fff;
-}
-
-.et-hero-tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  color: #000;
-  letter-spacing: 0.1rem;
-  transition: all 0.5s ease;
-  font-size: 0.8rem;
-  background: #fff;
-}
-.et-hero-tab:hover {
-  color: white;
-  background: rgba(102, 177, 241, 0.8);
-  transition: all 0.5s ease;
-}
-
-.et-hero-tab-slider {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 6px;
-  background: #66B1F1;
-  transition: left 0.3s ease;
-}
-
-@media (min-width: 800px) {
-  .et-hero-tabs h1,
-  .et-slide h1 {
-    font-size: 3rem;
-  }
-  .et-hero-tabs h3,
-  .et-slide h3 {
-    font-size: 1rem;
-    background: #fff;
-  }
-
-  .et-hero-tab {
-    font-size: 1rem;
-    background: #fff;
-  }
-}
